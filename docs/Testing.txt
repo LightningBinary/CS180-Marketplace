@@ -1,0 +1,177 @@
+CUSTOMER TESTS
+  
+  Lauching Application:
+    Steps:
+       1) Run the Server and Marketplace classes
+
+    Expected result: Application offers the user an option to login or create account. 
+
+    Test Status: Passed. 
+    
+    
+  Creating Account:
+    Steps:
+      1) launch application
+      2) Click create account option in GUI
+      3) enter unique username
+      4) enter password and real name
+      5) choose account priveleges
+      
+    Expected result: account is created and user is taken to the login screen
+    
+    Test Status: Passed
+    
+   
+  Adding to cart/buying items
+    Steps:
+      1) launch application
+      2) login (or create account)
+      3) Select either "Search" or "View Market" from drop down menu and enter
+          (a) if "Search" -> enter a search term
+          (b) if "View Market" -> nothing else is necessary
+      4) Select product from drop down menu
+      5) choose buy or add to cart option
+      6) enter quantity and enter
+      7) return to homescreen
+   
+   Expected Result: Database updated to add item to cart or buy the product and update its quantity
+   
+   Test Status: Passed
+   
+   
+ Sorting Products:
+    Steps:
+      1) launch application and login/create new account
+      2) select "Sort Products" from drop down menu and enter
+      3) Choose to sort products by quantity or price
+      4) return to menu and select "View Market" to see the sorted products
+      
+    Expected Result: sort products correctly and show results when user selects "View Market"
+    
+    Test Status: Passed (Notice that the items will only stay sorted immediatly after; 
+        if another choice is run (besides sort) the products will go back to natural order)
+        
+  Editing User Cart:
+      Steps:
+        1) launch application and login
+        2) select "View Cart" from drop down
+        3) select a product from the drop down of items in the cart
+        4) choose to remove or buy item
+        
+    Expected Results: Either purchase or remove product from cart (item is also removed after it is purchased from the cart)
+    
+    Test Status: Passed
+    
+    
+    Export History:
+      Steps: 
+        1) Launch application and login
+        2) select export history from menu drop down
+        3) enter the name of the file you want to export history to (before the ".csv")
+        4) close the program (through cancel options)
+        
+   Expected Results:  After program is closed the file will appear within the directory, along with a key so the user can read the information
+   
+   Test Status: Passed
+   
+   
+   
+   
+SELLER TESTS:
+
+  Lauching Application:
+    Steps:
+       1) Run the Server and Marketplace classes
+
+    Expected result: Application offers the user an option to login or create account. 
+
+    Test Status: Passed.
+    
+    
+  Creating Account:
+    Steps:
+      1) launch application
+      2) Click create account option in GUI
+      3) enter unique username
+      4) enter password and real name
+      5) choose account priveleges
+      
+    Expected result: account is created and user is taken to the login screen
+    
+    Test Status: Passed
+    
+   View Products:
+     Steps: 
+        1) Launch application and login/create new account
+        2) Select "View Products" from the dropdown menu
+        3) Select the store you want to view the products for
+        4) When completed, seller will be propted with store revenue
+        
+       Expected Result: Products for the store selected are shown through the JOptionPane window, along with revenue
+      
+       Test Status: Passed
+        
+    Remove Products:
+       Steps:
+         1) Launch application and login/create new account
+         2) Select "Remove Products" from the dropdown menu
+         3) Select the store you want to remove products from through the dropdown menu
+         4) Select the product you would like to remove from the store selection
+         
+         Expected Result: If view products is chosen, the product removed will no longer be in the store 
+         
+         Test Status: Passed
+         
+    Add Products:
+       Steps:
+         1) Launch application and login/create new account
+         2) Select "Add Products" from the dropdown menu
+         3) Select the store you want to add products to through the dropwdown menu
+         4) Seller will be prompted with questions concerning product name, description, quantity, and price
+         5) Product will be added to the store
+         
+         Expected Result: If view products is chosen, the product added will be shown in the store it was added to
+         
+         Test Status: Passed
+         
+     View Sales:
+        Steps:
+          1) Launch application and login/create new account
+          2) Select "View Sales" from the dropdown menu
+          3) Select the store you want to view sales for through the dropwdown menu
+          
+          Expected Result: Sales for the chosen store are displayed
+          
+          Test Status: Passed
+          
+      View Products in Cart:
+        Steps: 
+          1) Launch application and login/create new account
+          2) Select "View Products in Cart" from the dropdown menu
+          3) Select the store in which you want to view products in customers carts, through the dropwdown menu
+          
+          Expected Result: Seller products within customer carts are displayed
+          
+          Test Status: Passed
+          
+      Add Store:
+        Steps:
+          1) Launch application and login/create new account
+          2) Select "Add Store" from the dropdown menu
+          3) Give a store name through the prompted question dialogue
+          
+          Expected Result: Store is added to the marketplace
+          
+          Test Status: Passed
+          
+      Import Products:
+        Steps:
+          1) Launch application and login/create new account
+          2) Select "Import Products" from the dropdown menu
+          3) Enter a fielpath for an import file
+          
+          Expected Results: Products are added to the store
+          
+          Test Status: Passed
+          
+  

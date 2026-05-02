@@ -1,0 +1,94 @@
+# CS180 - Project 4 Report
+
+## Part One: The Project and its Functionality
+For project 4 our team decided to go through with option three, which takes on the task of implementing the official marketplace of the application. The
+theme of the marketplace is that it will allow sellers to list their products and customers to purchase them. Explanation of the project will begin with
+the Seller and Customer classes. 
+The Seller class is straightforward. It initializes four fields, username, password, id, and name, along with their respective getters and setters, and a
+Seller object to create and update accounts and sign into the application. The implementation of the Seller class includes the display of the unique store,
+which includes products, descriptions, quantities, and prices. Through this implementation, the seller is given the ability to remove and add products, as
+well as view sales, and add a new store. 
+Next, is the Customer class, which is fairly like that of the Seller class. It initializes the same fields as the Seller class, including username,
+password, id, and name, but along with that it also initializes an array list to act as their shopping cart and to save products purchased. Implementation
+of the Customer class gives the customer the choice of four options, which include searching for products, choosing products, viewing their cart, or
+quitting the application. Necessary to the function of the array lists in the Customer class is the Product class, which represents that of a product and
+initializes the fields of storeID, id, name, description, quantity, price, and seller. All except storeID are included in the Product object, which is used
+for the general description of products accompanied by a toString() method for ease of display.
+Now, the Database class. First, we create a connection to the database through the use of UCanAccess by giving the URL of the database. UCanAccess is an
+“open-source Java JDBC driver implementation that allows Java developers and JDBC client programs (e.g., DBeaver, NetBeans, SQLeo, OpenOffice Base,
+LibreOffice Base, Squirrel SQL) to read/write Microsoft Access databases.” (https://ucanaccess.sourceforge.net/site.html) From there once the connection
+was made what needed to be done was to ask the connection to do certain actions, in the case of our project implementation, we only made SQL queries. Each
+query is set by a set of Keywords such as Insert into Delete and Select. Once the Query has run it will return the results of the said query in the
+specified order.
+	The final class of the project is the Market class, and it is by far the largest. Within the class, the main method is established. The main method
+starts with establishing who the user is and whether an account must be made for a new user. If a new account must be made, a series of questions
+follow, which allows the user to establish a username, name, password, and whether they would like a seller or customer account. If the user had an
+account, to begin with, they are instead prompted to input the password for their account. From here if the user is a customer, products and their details
+are printed, and following that is a series of choices the customer can take in deciding what they want to do (choices highlighted in the Customer class
+section above). If the user is instead a seller, their store(s) are displayed, and the following is, again, a series of choices that the seller can take to
+decide their next move in the application (choices highlighted in the Seller section above). The main method ends with a message of appreciation for the
+user.
+
+
+## Part Two: Individual Section
+
+### Owen Willis
+My main contribution to project 4 was the Market class.  This is where the main method that ran the market interface was.  Users are prompted to enter a Username or create an account.  From there the main method splits into different interfaces depending on whether the user is a buyer or a seller.  Buyers can view the products in the market and buy or add items to their cart.  Sellers can view their products, stores, and sales.   All information that is input or output within the main method is either read from or saved to the database through CSV (or table) files.  All quires to the database were done through the main method, although these were mainly contributions made by my teammates.  My responsibility was integrating all the classes created by my teammates into a functioning program that responds based on user input via the terminal.  Additionally, I contributed to one of the subclasses, the Customer class.  The customer class was used to instantiate users within the main method and associate an ID, name, and password with the user.  This information was in turn used to track each users’ cart and purchase history within CSV files.    Outside of the coding aspect, I also helped plan meetings and break up the tasks that needed completion for project 4.
+The only thing I would change if we were to start over again is time management.  Everyone on the team had a lot going on, so it wasn’t anyone’s fault, but starting the project a little earlier and working at a steady pace could have led to a better outcome for the final project.  While the project still represents high effort from every team member, a more concrete schedule or timeline could have reduced stress for team members and made the project seem a bit more manageable.  In terms of coding, I think a little more structure could have been used in the subclasses.  An abstract class or interface for a general “user” could have been implemented to keep the Customer and Seller classes a bit cleaner.
+
+
+
+
+### Jaime Rueda
+For project four I took care of all the aspects that were necessary in order to create, connect and integrate a database into the project. The first step was to create the database that would be utilized. To create the database I used Microsoft access due to the integration through Ucanaccess that can be imported into IntelliJ. Once the file was created I created a table for each of the major components of the database which could be constituted as a table, this will allow us to determine what would be the characteristics of each of the classes. Once that is done I created the relationships between the tables in order to connect them and the main reason as to why we are using the database since we can filter the tables through the use of queries. Once the database was set up I integrated the database into Java through the Database class. This class when constructed will create a connection through Ucanaccess and allow java and the database to talk to one another. Furthermore, I was in charge of all of the SQL queries that are used within the code in order to facilitate all of the reading and searching within the information needed.
+If I were to start over againI probably would have avoided the integration of the Database since even though the utilization for it is of great use and convenience the integration has been a constant uphill battle with the system. Not only that but most of our errors seem to occur with the fact that the file for some reason is not letting other people get access even though there should not be any restrictions of use. At this point it probably would have been easier to deal with the limitations of the CSV files instead of all the problems that have been created with the integration of the database. For project 5 I believe we have two different options: either we resolve all of our issues with the database and continue down that path or probably restart integrating only the CSV files.
+
+
+### Libin Chen
+For project 4, my contributions are mainly to company the codes written by the members of our group, make suggestions to the structure of the program, provide clear and concise guidelines for what classes we might implement, assist and help the rest of team members to implement any codes, methods, and classes they ask. I am responsible for the Product class, Seller class, and a little of the Market class. Meanwhile, I also contributed the detailed comments of the Database class, Market class, and the debugging process of all our codes. I also written the Part Three of our report for project 4. At the beginning of the project, I made documents like Instruction.txt to try to communicate with our members to get the best approach to accomplish our goals. I suggested that we could use CSV files to store our data of users and build up the whole program upon this data store structure. However, after in-depth discussion about the data structure, we have decided to use Database to store our data since one of our group members is very familiar with it. Finally, I am the one that is responsible for creating our GitHub repository for project 4 and introduce to the group members some features about the GitHub repository.
+During the coding period, I suggested that we could create an abstract User class for both Seller and Customer, then let Seller and Customer classes extend the User class. Additionally, I also suggested that we should put codes separated into different methods instead of writing them into a single main method because that would make the debugging process very difficult. However, since one of our teammates has almost finished his codes, we decided to not start over again on our codes. If I was given the opportunity to start over again, I think I might want to implement these changes to our codes.
+
+
+### Thomas Eggers
+In terms of the coding aspect of Project 4, most of my contributions consisted of debugs of code within the classes, primarily the market class, and the
+development of error checks within the main method which would prevent the failure of the program/ application due to invalid input attempts. These error
+checks commonly consisted of do-while loops which would check the input and continue if it was valid. Aside from the coding aspects, I assisted in reaching
+out to the project group to establish some sort of fluid communication in the early stages of the project, and the proposal of a few in-person meeting
+times based on our individual scheduling conflicts and openings. Along with this I also wrote part 1 for our Project 4 report. This task asked me to
+describe the project and the functionality we implemented. To do so I queried some of the project team members about details of their specific
+implementations of code, along with doing some background research on an implementation such as UCanAccess, as used with the database. It required me to
+develop a somewhat deep interpretation of the project code and how it is connected to allow the program to run properly so that I could give a clear
+summary of what the implementations were. 
+In terms of what I would want to happen differently if we had done Project 4 again, it would primarily consist of getting an earlier start on the project
+and developing a clearer and more concise plan for executing our roles. Each member seemed to have a lot going on during the project, and the fact that we
+had not established full communication until a few days after the project release date gave us a disadvantage in getting a smooth start. By starting over
+the first step would be to meet in person as soon as possible and lay out a detailed plan for all members to execute within the aspect of coding that they
+work best in. This is exactly what I think we should consider for Project 5, and I think it will go a lot smoother since our communication is already
+established and that won’t be a problem.
+
+
+
+## Part Three: Project 5 Collaboration Strategy
+For our collaboration strategy in Project 5, we've decided to follow the same approach we used in Project 4. This allows us to build upon the collaboration experience we've gained and work together more effectively and efficiently, so we don’t need to make a new plan for our collaboration again.
+Firstly, we'll break down the complex program into smaller, simpler cases and assign them to each team member, just like in project 4. We'll then come together as a group to tackle the more difficult cases and work through any bugs by having deep discussions. We'll continue to use the communication channels that worked well for us in Project 4, including email, phone, video conferencing, and collaboration tools. We want to ensure that everyone is comfortable with the tools we use and has easy access to them.
+Finally, we'll create a schedule for Project 5 and share it with everyone through our GitHub repository like what we have done for project 4. This will ensure that everyone is aware of the project timeline and can plan their work accordingly. By following this strategy, we believe we can work together more efficiently and effectively, and ultimately achieve a successful outcome for our next project.
+
+For the tasks list, we believe that the most important and challenging implementations are the exchange of information between server and client, the concurrency of threads to avoid race condition, and the GUI windows design. Thus, we might follow the list below for our project 5:
+
+“Develop Server and Client class, along with network connection” – Completed by   04/17/2023 – Jaime Rueda
+
+“Develop concurrency of threads to avoid race condition” – Completed by 04/17/2023 – Owen Willis
+
+“Develop fully-featured GUI” – Completed by 04/17/2023 – Tommy Eggers
+
+“Develop fully-featured GUI windows design” – Completed by 04/17/2023 – Libin Chen
+
+However, we might modify the responsibilities for each of our members when we are writing our program, or we might come together to work on the same part when we are facing challenging issues.
+
+In the event of conflicts, we would try to communicate with our team first to avoid any misunderstandings. We should focus on the problem, not the person, in any event of conflict. When conflicts arise, by focusing on the issue, the team can work together to find a solution. And if a conflict occurred, we would try to find the root of this issue, once the root cause of the conflict is identified, we could brainstorm possible solutions. This can involve considering different perspectives and finding common ground. If the conflict is too difficult to resolve by our team members, we would seek help from our professor and TAs of our class for outside intervenes.
+
+
+
+
+
+
